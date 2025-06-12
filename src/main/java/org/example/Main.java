@@ -4,53 +4,40 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //set value
-        Person p1 = new Person();
-        p1.name= "Vu";
-        p1.age = 25;
-        p1.address= "Hanoi";
+        Geometry g = new Circle(5);
+        System.out.println("Circle area: " + g.area());
 
-        //methods
-        p1.walk();
-        p1.sleep();
-        p1.eat();
+        BankAccount acc = new BankAccount("123", 1000);
+        acc.deposit(500);
+        System.out.println("Balance: " + acc.getBalance());
 
+        GeometryManager.printArea(new Rectangle(5, 4));
 
-        Person p2 = new Person("Hung");
-        p2.walk();
-        p2.sleep();
-        p2.eat();
+        Employee emp = new ProductionEmployee("John", 100, 10);
+        System.out.println("Salary: " + emp.calculateSalary());
 
-//        //student class teacher testing
-//        Student s1 = new Student("Nam", 16);
-//        Student s2 = new Student("Linh", 17);
-//        Student s3 = new Student("Hoa", 16);
-//
-//
-        Teacher teacher = new Teacher();
-        teacher.teach();
-        teacher.name = "Cuong";
-        teacher.age = 30;
-        teacher.teacher_study();
-//
-//
-//        Student[] studentList = {s1, s2, s3};
-//        Classroom classroom = new Classroom(teacher, studentList);
-//
-//
-//        classroom.startClass();
+        IFlyable flyObj = new Airplane();
+        flyObj.fly();
 
-        HomoSapiens human= new HomoSapiens();
-        human.name = "Homo";
-        human.age= 19;
-        human.walk();
-        human.Run();
+        Shape s = new TriangleShape();
+        s.draw();
 
-        Student student = new Student();
-        student.name = "Hoc sinh";
-        student.age =21;
-        student.walk();
-        student.Run();
-        student.Study();
+        Animal a = new Dog();
+        a.speak();
+
+        Animal b = new Cat();
+        b.speak();
+
+        IVehicle v = new Bike();
+        v.start();
+
+        Manager m = new Manager();
+        m.name = "Alice";
+        m.age = 40;
+        m.department = "HR";
+        m.teamSize = 5;
+
+        ShapeVirtual sv = new RectangleVirtual(3, 4);
+        System.out.println("Virtual area: " + sv.calculateArea());
     }
 }
